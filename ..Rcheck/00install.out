@@ -1,0 +1,19 @@
+* installing *source* package ‘indelsig.tools.lib’ ...
+** using staged installation
+** libs
+make: Nothing to be done for `all'.
+make: `symbols.rds' is up to date.
+installing to /Users/xz388/Documents/GitHub/indelsig.tools.lib/..Rcheck/00LOCK-indelsig.tools.lib/00new/indelsig.tools.lib/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (indelsig.tools.lib)

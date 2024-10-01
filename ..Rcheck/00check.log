@@ -1,0 +1,309 @@
+* using log directory ‘/Users/xz388/Documents/GitHub/indelsig.tools.lib/..Rcheck’
+* using R version 4.0.2 (2020-06-22)
+* using platform: x86_64-apple-darwin17.0 (64-bit)
+* using session charset: UTF-8
+* checking for file ‘./DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘indelsig.tools.lib’ version ‘0.1.0’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... WARNING
+Subdirectory ‘indelsig.tools.lib/src’ contains apparent object files/libraries
+  RcppExports.o code.o indelsig.tools.lib.so
+Object files/libraries should not be included in a source package.
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .DS_Store
+  .RData
+  .Rhistory
+  .gitignore
+  R/.DS_Store
+  data/.DS_Store
+  src/.gitignore
+  vignettes/.gitignore
+  ..Rcheck
+  .Rproj.user
+  .git
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+* checking for portable file names ... NOTE
+Found the following non-portable file paths:
+  indelsig.tools.lib/.Rproj.user/shared/notebooks/275570AA-Vignette_indelsig/1/7BB1E34C501C3DDE/chunks.json
+  indelsig.tools.lib/.Rproj.user/shared/notebooks/275570AA-Vignette_indelsig/1/s/czxrlhk14ey3c/000002.csv
+
+Tarballs are only required to store paths of up to 100 bytes and cannot
+store those of more than 256 bytes, with restrictions including to 100
+bytes for the final component.
+See section ‘Package structure’ in the ‘Writing R Extensions’ manual.
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘indelsig.tools.lib’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... NOTE
+Checking should be performed on sources prepared by ‘R CMD build’.
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Found the following directory with the name of a check directory:
+  ./..Rcheck
+Most likely, these were included erroneously.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking dependencies in R code ... NOTE
+Namespaces in Imports field not imported from:
+  ‘BSgenome.Hsapiens.UCSC.hg19’ ‘BSgenome.Hsapiens.UCSC.hg38’
+  ‘GenomicFeatures’ ‘Rtsne’ ‘VariantAnnotation’ ‘factoextra’
+  ‘ggbeeswarm’ ‘plyr’ ‘rlang’ ‘signature.tools.lib’ ‘umap’ ‘utils’
+  All declared Imports should be used.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+Found the following possibly unsafe calls:
+File ‘indelsig.tools.lib/R/single_file_scott.R’:
+  assignInNamespace(name, prepare_fixed, ns = "signature.tools.lib")
+
+assign_channels_m5: no visible binding for global variable ‘indel.type’
+assign_channels_m5: no visible binding for global variable
+  ‘indel.length’
+assign_channels_m5: no visible binding for global variable ‘change_pyr’
+assign_channels_m5: no visible binding for global variable
+  ‘prime3_reps’
+assign_channels_m5: no visible binding for global variable ‘rep_slice5’
+assign_channels_m5: no visible binding for global variable ‘rep_slice3’
+assign_channels_m5: no visible binding for global variable
+  ‘spacer_length’
+assign_channels_m5: no visible binding for global variable
+  ‘original_reps’
+assign_channels_mf: no visible binding for global variable ‘indel.type’
+assign_channels_mf: no visible binding for global variable
+  ‘indel.length’
+assign_channels_mf: no visible binding for global variable ‘change_pyr’
+assign_channels_mf: no visible binding for global variable
+  ‘prime3_reps’
+assign_channels_mf: no visible binding for global variable
+  ‘spacer_length’
+assign_channels_mf: no visible binding for global variable
+  ‘unit_length’
+assign_channels_mf: no visible binding for global variable ‘mh_length’
+assign_channels_mf: no visible binding for global variable ‘REF’
+assign_channels_mf: no visible binding for global variable ‘ALT’
+cal_cossim_2sigsets: no visible global function definition for
+  ‘write.table’
+cal_cossim_2sigsets: no visible global function definition for ‘pdf’
+cal_cossim_2sigsets: no visible global function definition for
+  ‘geom_tile’
+cal_cossim_2sigsets: no visible binding for global variable
+  ‘similarity’
+cal_cossim_2sigsets: no visible binding for global variable ‘y2’
+cal_cossim_2sigsets: no visible global function definition for ‘xlim’
+cal_cossim_2sigsets: no visible global function definition for ‘ylim’
+divid_indelcat: no visible global function definition for ‘write.table’
+fix_prepare_indels: no visible global function definition for
+  ‘assignInNamespace’
+gen_catalogue89: no visible binding for global variable
+  ‘indel_template_type_4’
+gen_fullcatalogue: no visible binding for global variable
+  ‘indel_template_type_4_full’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘IndelType’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘freq’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘Indel’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘xmin’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘ymin’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘xmax’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘ymax’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘Type’
+gen_plot_catalouge21_single: no visible binding for global variable
+  ‘cl’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘indel_type_4_figurelabel’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘IndelType’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘freq’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘Indel’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘xmin’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘ymin’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘xmax’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘ymax’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘Type’
+gen_plot_catalouge89_single: no visible binding for global variable
+  ‘cl’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘indel_type_4_figurelabel’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘IndelType’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘freq’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘Indel’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘xmin’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘ymin’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘xmax’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘ymax’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘Type’
+gen_plot_catalouge89_single_noXlabel: no visible binding for global
+  variable ‘cl’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘IndelType’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘freq’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘Indel’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘xmin’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘ymin’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘xmax’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘ymax’
+gen_plot_catalouge89_single_old: no visible binding for global variable
+  ‘Type’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘indel_type_4_figurelabel’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘IndelType’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘freq’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘Indel’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘xmin’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘ymin’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘xmax’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘ymax’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘Type’
+gen_plot_catalouge89_single_percentage: no visible binding for global
+  variable ‘cl’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘indel_template_type_4_full_figurelabel’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘IndelType’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘freq’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘Indel’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘xmin’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘ymin’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘xmax’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘ymax’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘Type’
+gen_plot_catalougefull_single: no visible binding for global variable
+  ‘cl’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘indel_template_type_4_full_figurelabel’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘IndelType’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘freq’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘Indel’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘xmin’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘ymin’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘xmax’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘ymax’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘Type’
+gen_plot_catalougefull_single_noXlabel: no visible binding for global
+  variable ‘cl’
+hclust_indel: no visible binding for global variable
+  ‘indel_template_type_4’
+hclust_indel: no visible global function definition for ‘pdf’
+hclust_indel: no visible global function definition for ‘dev.off’
+plot_sig_count: no visible binding for global variable ‘sample_sig_per’
+plot_sig_count: no visible binding for global variable ‘Sample’
+plot_sig_count: no visible binding for global variable ‘Count’
+plot_sig_count: no visible binding for global variable ‘Sig’
+plot_sig_count: no visible binding for global variable
+  ‘indel_mypalette_fill’
+plot_sig_count: no visible binding for global variable ‘blocks’
+plot_sig_percentage: no visible binding for global variable
+  ‘sample_sig_per’
+plot_sig_percentage: no visible binding for global variable ‘Sample’
+plot_sig_percentage: no visible binding for global variable ‘Count’
+plot_sig_percentage: no visible binding for global variable ‘Sig’
+plot_sig_percentage: no visible global function definition for
+  ‘scale_y_continuous’
+Undefined global functions or variables:
+  ALT Count Indel IndelType REF Sample Sig Type assignInNamespace
+  blocks change_pyr cl dev.off freq geom_tile indel.length indel.type
+  indel_mypalette_fill indel_template_type_4 indel_template_type_4_full
+  indel_template_type_4_full_figurelabel indel_type_4_figurelabel
+  mh_length original_reps pdf prime3_reps rep_slice3 rep_slice5
+  sample_sig_per scale_y_continuous similarity spacer_length
+  unit_length write.table xlim xmax xmin y2 ylim ymax ymin
+Consider adding
+  importFrom("grDevices", "dev.off", "pdf")
+  importFrom("utils", "assignInNamespace", "write.table")
+to your NAMESPACE file.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking compiled code ... OK
+* checking files in ‘vignettes’ ... WARNING
+Files in the 'vignettes' directory but no files in 'inst/doc':
+  ‘Vignette_indelsig.Rmd’
+* checking examples ... NONE
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in ‘inst/doc’ ... WARNING
+dir.exists(dir) is not TRUE
+Package vignette without corresponding single PDF/HTML:
+   ‘Vignette_indelsig.Rmd’
+
+* checking running R code from vignettes ... NONE
+  ‘Vignette_indelsig.Rmd’ using ‘UTF-8’... OK
+* checking re-building of vignette outputs ... OK
+* checking PDF version of manual ... OK
+* DONE
+Status: 4 WARNINGs, 5 NOTEs

@@ -1,0 +1,86 @@
+assign_channels_m5      Assign each indel a channel
+assign_channels_mf      Assign each indel a channel from 464 channels
+cal_cossim_2sigsets     Calculate cosine similarity between two
+                        signature/profile sets
+cos_similarity          Calculate cosine similarity between two vectors
+divid_indelcat          Separate indel catlogue according to a indel
+                        number cutoff
+fix_load_indels         Fix load indels
+fix_prepare_indels      Fix prepare indels
+gen_catalogue21         Generate indel catalogue in 21 channels
+gen_catalogue89         Generate indel catalogue in 89 channels
+gen_fullcatalogue       Generate indel catalogue in full channels
+gen_plot_catalouge21_single
+                        Plot indel profile in a 21-channel bar plot for
+                        single sample
+gen_plot_catalouge89_single
+                        Plot indel profile in a 89-channel bar plot for
+                        single sample Show all x labels
+gen_plot_catalouge89_single_noXlabel
+                        Plot indel profile in a 89-channel bar plot for
+                        single sample Not show X labels
+gen_plot_catalouge89_single_old
+                        Old function to plot indel profile/signature in
+                        a 89-channel bar plot for single sample
+gen_plot_catalouge89_single_percentage
+                        Plot indel signature in a 89-channel bar plot
+                        for single sample
+gen_plot_catalougefull_single
+                        Plot indel profile in a extended channel bar
+                        plot for single sample Show all x labels
+gen_plot_catalougefull_single_noXlabel
+                        Plot indel profile in a extended channel bar
+                        plot for single sample Not show X labels
+hclust_indel            Hierarchical Clustering to identify high-burden
+                        clusters
+indel_classifier89      Classify indels into different types
+indel_classifier_full   expand 89 channels
+indel_highspecific      For signature analysis, indels have to be as
+                        clean as possible. This function will: 1)
+                        remove single indels that have original_reps
+                        >=10 2) remove nMer indels that have
+                        original_reps >=10 3) small indels: length
+                        <=100
+indel_template_type_4   indel_template_type_4
+indel_template_type_4_full
+                        indel_template_type_4_full
+indel_template_type_4_full_figurelabel
+                        indel_template_type_4_full_figurelabel
+indel_type_4_figurelabel
+                        indel_type_4_figurelabel
+normalize_euclidean     Normalize a vector by euclidean length
+normalize_manhattan     Normalize a vector by manhattan length
+plot_sig_count          Plot Count of signature in each sample for a
+                        given cohort
+plot_sig_percentage     Plot percentage of signature in each sample for
+                        a given cohort
+plots_indelprofile_21ch
+                        Plot indel profile in a 21-channel bar plot,
+                        original plots_type_4_m4_89 function
+plots_indelprofile_89ch
+                        Plot indel profile in a 89-channel bar plot,
+                        original plots_type_4_m4_89 function
+plots_indelprofile_89ch_noXlabel
+                        Plot indel profile in a 89-channel bar plot,
+                        original plots_type_4_m4_89 function Not show X
+                        labels
+plots_indelprofile_full
+                        Plot indel profile in a extended channel bar
+                        plot, original plots_type_4_m4_89 function
+plots_indelprofile_fullch_noXlabel
+                        Plot indel profile in a extended channel bar
+                        plot, original plots_type_4_m4_89 function Not
+                        show X labels
+plots_indelsig_89ch     Fixed size plot indel signatures in a
+                        89-channel bar plot, original
+                        plots_type_4_m4_89 function
+prepare_indels          Prepare indels sequence context information for
+                        classification
+preprocess.sample       Preprocess samples before signature extraction
+rescale.sample          Plot indel profile in a 89-channel bar plot,
+                        original plots_type_4_m4_89 function
+segment                 segmentation function
+segment_indels          Segment indels types for classification
+ss.sample               Combine low indel burden samples to make
+                        synthetic sample with indel number more than a
+                        given threshold
