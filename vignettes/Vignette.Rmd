@@ -1,7 +1,19 @@
-# indelsig.tools.lib
-An R package for indel signature analysis
+---
+title: "indelsig.tools.lib"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette_indelsig}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
-## Main Functions
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Main Functions
 
 - indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the catalog
   - indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
@@ -12,3 +24,11 @@ An R package for indel signature analysis
   - muts_list: either the output of indel_classifier89 or indel_highspecific
   - sample_col: name or index of the column storing the sample names
 - plots_indelprofile_89ch()
+
+```{r}
+
+
+
+
+```
+
