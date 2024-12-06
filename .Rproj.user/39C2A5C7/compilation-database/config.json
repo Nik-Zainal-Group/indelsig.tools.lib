@@ -1,0 +1,25 @@
+{
+    "args": [
+        "-std=gnu++11",
+        "-I/opt/R/4.0.2/lib/R/include",
+        "-DNDEBUG",
+        "-I/usr/local/include",
+        "-fpic",
+        "-I/home/vboxuser/R/x86_64-pc-linux-gnu-library/4.0/Rcpp/include",
+        "-DEIGEN_DONT_VECTORIZE",
+        "-I/usr/lib/llvm-14/lib/clang/14.0.0/include",
+        "-I/usr/include/c++/11",
+        "-I/usr/include/x86_64-linux-gnu/c++/11",
+        "-I/usr/include/c++/11/backward",
+        "-I/usr/lib/gcc/x86_64-linux-gnu/11/include",
+        "-I/usr/local/include",
+        "-I/usr/include/x86_64-linux-gnu",
+        "-I/usr/include"
+    ],
+    "pch": "Rcpp",
+    "is_cpp": true,
+    "hash": "1733505196",
+    "compiler": "3206613558516718252",
+    "rversion": "4.0.2",
+    "dbversion": 4
+}
