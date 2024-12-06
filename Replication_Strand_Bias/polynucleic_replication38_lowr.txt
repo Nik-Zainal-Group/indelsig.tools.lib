@@ -1,0 +1,13 @@
+seq_name	Strand_pyrimidine	poly_length	NChild	sum	pyrimidine
+C_234	lagging	2_4	36	56781135	C
+C_234	leading	2_4	36	57895552	C
+C_567	lagging	5_7	36	1286457	C
+C_567	leading	5_7	36	1339204	C
+C_89	lagging	8_9	36	8884	C
+C_89	leading	8_9	36	8612	C
+T_234	lagging	2_4	36	137779025	T
+T_234	leading	2_4	36	133549777	T
+T_567	lagging	5_7	36	7409247	T
+T_567	leading	5_7	36	6989196	T
+T_89	lagging	8_9	36	388062	T
+T_89	leading	8_9	36	349296	T
