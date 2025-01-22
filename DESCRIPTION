@@ -44,6 +44,6 @@ LinkingTo:
     Rcpp
 Remotes:
     github::Nik-Zainal-Group/signature.tools.lib,
-    bioc::3.3/BSgenome.Hsapiens.UCSC.hg38,
-    bioc::3.3/BSgenome.Mmusculus.UCSC.mm10,
-    bioc::3.3/BSgenome.Hsapiens.1000genomes.hs37d5
+    bioc::3.2/BSgenome.Hsapiens.UCSC.hg38,
+    bioc::3.2/BSgenome.Mmusculus.UCSC.mm10,
+    bioc::3.2/BSgenome.Hsapiens.1000genomes.hs37d5
