@@ -2,6 +2,42 @@
 
 An R package for indel signature analysis. 
 
+## Installation
+
+You can either download the `indelsig.tools.lib` repository, enter in the package folder.
+
+```
+git clone https://github.com/Nik-Zainal-Group/indelsig.tools.lib
+
+cd indelsig.tools.lib
+```
+
+Then install the package using `devtools`.
+
+```
+install.packages("devtools")
+devtools::install()
+
+```
+
+Or you can install the package directly from the R environment:
+
+
+```
+install.packages("devtools")
+devtools::install_github("Nik-Zainal-Group/indelsig.tools.lib")
+
+```
+
+# Note for MacOS users:
+
+In case of problems installing the `NNLM` dependency library for `signature.tools.lib` regarding `gfortran` location I suggest you the following Stackoverflow thread:
+
+```
+https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-installing-r-packages
+
+```
+
 
 
 ## Main Functions
@@ -62,6 +98,7 @@ mutations <- indelsig.tools.lib::gen_catalogue89(mutations, sample_col = 1)
 dim(mutations)
 # [1] 89  1
 
+# Plot to file
 plots_indelprofile_89ch(mutations, colnum = 1, h = 3, w = 8,text_size = 3, outputname = "example/example_plot")
 
 #or 
