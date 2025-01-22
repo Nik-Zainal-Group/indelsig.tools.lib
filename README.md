@@ -39,19 +39,19 @@ https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-ins
 
 ## Main Functions
 
--   indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the catalog
+-   indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 89-channels catalog
     -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
     -   genome.v: either "hg19" or "hg38"
--   indel_classifierfull(indels, genome.v): Segments the indels provided by adding the necessary information to generate the catalog
+-   indel_classifierfull(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 476-channels catalog
     -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
     -   genome.v: either "hg19" or "hg38"
 -   indel_highspecific(indel.classified): Filters highly repeated indels (\>= 10 repeats), indels with highly repeated nMer (\>=10) and indels longer than 100 bps
-    -   indel.classified: the output of either indel_classifier89 or indel_classifierfull
+    -   indel.classified: the output of either `indel_classifier89` or `indel_classifierfull`
 -   gen_catalogue89(muts_list, sample_col):
-    -   muts_list: either the output of indel_classifier89 or indel_highspecific
+    -   muts_list: either the output of `indel_classifier89` or `indel_highspecific`
     -   sample_col: name or index of the column storing the sample names
 -   gen_fullcatalogue(muts_list, sample_col):
-    -   muts_list: either the output of indel_classifierfull or indel_highspecific
+    -   muts_list: either the output of `indel_classifierfull` or `indel_highspecific`
     -   sample_col: name or index of the column storing the sample names
 -   plots_indelprofile_89ch(muts_basis, colnum,h, w, text_size,print_Xlabel = T, outputname)
     -   muts_basis: catalogue data frame
