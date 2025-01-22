@@ -36,7 +36,7 @@ ld: warning: search path '/opt/gfortran/lib/gcc/aarch64-apple-darwin20.0/12.2.0'
 ld: warning: search path '/opt/gfortran/lib' not found
 ld: library 'gfortran' not found
 ```
-You can simply install `gfortran` pkg file from the following Github page:
+You can simply install `gfortran` pkg file from the following Github page to fix the issue:
 
 ```
 https://github.com/R-macos/gcc-12-branch/releases
