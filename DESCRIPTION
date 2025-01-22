@@ -24,9 +24,6 @@ Imports:
     factoextra,
     VariantAnnotation,
     GenomicFeatures,
-    BSgenome.Hsapiens.UCSC.hg38,
-    BSgenome.Mmusculus.UCSC.mm10,
-    signature.tools.lib,
     rlang,
     grDevices,
     utils,
@@ -38,6 +35,10 @@ Suggests:
     testthat
 biocViews:
     AnnotationData
+    BSgenome.Hsapiens.UCSC.hg38,
+    BSgenome.Mmusculus.UCSC.mm10,
 VignetteBuilder: knitr
 LinkingTo: 
     Rcpp
+Remotes:
+    Nik-Zainal-Group/signature.tools.lib
