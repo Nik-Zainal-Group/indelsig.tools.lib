@@ -39,6 +39,9 @@ https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-ins
 
 ## Main Functions
 
+### Data segmentation and filtering
+
+
 -   indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 89-channels catalog
     -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
     -   genome.v: either "hg19" or "hg38"
@@ -47,12 +50,20 @@ https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-ins
     -   genome.v: either "hg19" or "hg38"
 -   indel_highspecific(indel.classified): Filters highly repeated indels (\>= 10 repeats), indels with highly repeated nMer (\>=10) and indels longer than 100 bps
     -   indel.classified: the output of either `indel_classifier89` or `indel_classifierfull`
+
+
+### Generating catalogues
+
 -   gen_catalogue89(muts_list, sample_col):
     -   muts_list: either the output of `indel_classifier89` or `indel_highspecific`
     -   sample_col: name or index of the column storing the sample names
 -   gen_fullcatalogue(muts_list, sample_col):
     -   muts_list: either the output of `indel_classifierfull` or `indel_highspecific`
     -   sample_col: name or index of the column storing the sample names
+
+
+
+### Plotting
 -   plots_indelprofile_89ch(muts_basis, colnum,h, w, text_size,print_Xlabel = T, outputname)
     -   muts_basis: catalogue data frame
     -   colnum: Number of columns in case multiple samples are plotted
