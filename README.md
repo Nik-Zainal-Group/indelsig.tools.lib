@@ -31,7 +31,7 @@ devtools::install_github("Nik-Zainal-Group/indelsig.tools.lib")
 
 # Note for MacOS users:
 
-In case of problems installing the `NNLM` dependency library for `signature.tools.lib` regarding `gfortran` location I suggest you the following Stackoverflow thread:
+In case of problems installing the `NNLM` dependency library for `signature.tools.lib` regarding `gfortran` environmental variable path, I suggest you the following Stackoverflow thread:
 
 ```
 https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-installing-r-packages
