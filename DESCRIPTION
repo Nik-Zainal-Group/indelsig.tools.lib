@@ -38,13 +38,12 @@ Suggests:
     rmarkdown,
     testthat
 biocViews:
-    AnnotationData,
-
+    AnnotationData
 VignetteBuilder: knitr
 LinkingTo: 
     Rcpp
 Remotes:
-    github::Nik-Zainal-Group/signature.tools.lib
+    github::Nik-Zainal-Group/signature.tools.lib,
     bioc::3.3/BSgenome.Hsapiens.UCSC.hg38,
     bioc::3.3/BSgenome.Mmusculus.UCSC.mm10,
     bioc::3.3/BSgenome.Hsapiens.1000genomes.hs37d5
