@@ -17,7 +17,6 @@ Then install the package using `devtools`.
 ```
 install.packages("devtools")
 devtools::install()
-
 ```
 
 Or you can install the package directly from the R environment:
@@ -26,7 +25,6 @@ Or you can install the package directly from the R environment:
 ```
 install.packages("devtools")
 devtools::install_github("Nik-Zainal-Group/indelsig.tools.lib")
-
 ```
 
 ### Note for MacOS users:
@@ -35,7 +33,6 @@ In case of problems installing the `NNLM` dependency library for `signature.tool
 
 ```
 https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-installing-r-packages
-
 ```
 
 
@@ -45,19 +42,37 @@ https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-ins
 -   indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the catalog
     -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
     -   genome.v: either "hg19" or "hg38"
+-   indel_classifierfull(indels, genome.v): Segments the indels provided by adding the necessary information to generate the catalog
+    -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
+    -   genome.v: either "hg19" or "hg38"
 -   indel_highspecific(indel.classified): Filters highly repeated indels (\>= 10 repeats), indels with highly repeated nMer (\>=10) and indels longer than 100 bps
-    -   indel.classified: the output of indel_classifier89
+    -   indel.classified: the output of either indel_classifier89 or indel_classifierfull
 -   gen_catalogue89(muts_list, sample_col):
     -   muts_list: either the output of indel_classifier89 or indel_highspecific
+    -   sample_col: name or index of the column storing the sample names
+-   gen_fullcatalogue(muts_list, sample_col):
+    -   muts_list: either the output of indel_classifierfull or indel_highspecific
     -   sample_col: name or index of the column storing the sample names
 -   plots_indelprofile_89ch(muts_basis, colnum,h, w, text_size,print_Xlabel = T, outputname)
     -   muts_basis: catalogue data frame
     -   colnum: Number of columns in case multiple samples are plotted
-    -   h: Height of PDF file
-    -   w: Width of PDF file
+    -   h: Height (inches) of file 
+    -   w: Width (inches) of file
     -   text_size: Text size of plot elements defining the channels
-    -   print_Xlabel: if TRUE then the X axis labels are printed
-    -   outputname: if NULL the plot with be returned and printed, if it is a path then indelsig.tools.lib will print the plot to the PDF file defined by the path.
+    -   print_Xlabel: if `TRUE` then the X axis labels are printed
+    -   outputname: if `NUL`L the plot with be returned and printed, if it is a path then indelsig.tools.lib will print the plot to file.
+    -   print_png: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a png file
+    -   print_pdf: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a pdf file
+-   plots_indelprofile_full(muts_basis, colnum,h, w, text_size,print_Xlabel = T, outputname)
+    -   muts_basis: catalogue data frame
+    -   colnum: Number of columns in case multiple samples are plotted
+    -   h: Height (inches) of file 
+    -   w: Width (inches) of file
+    -   text_size: Text size of plot elements defining the channels
+    -   print_Xlabel: if `TRUE` then the X axis labels are printed
+    -   outputname: if `NUL`L the plot with be returned and printed, if it is a path then indelsig.tools.lib will print the plot to file.
+    -   print_png: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a png file
+    -   print_pdf: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a pdf file
 
 ## Usage example
 
