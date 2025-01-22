@@ -1048,19 +1048,31 @@ plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel
 
     }
 
-    if(is.null(outputname) == F){
-
-      filename <- paste0(outputname, ".pdf")
-      grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h)
-      do.call("grid.arrange", c(p_all, ncol = colnum))
-      grDevices::dev.off()
-
+    if(is.null(outputname)==F){
+      
+      if(print_pdf){
+        filename <- paste0(outputname, ".pdf")
+        grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h)
+        
+        do.call("grid.arrange", c(p_all, ncol = colnum))
+        grDevices::dev.off()
+      }
+      
+      if(print_png){
+        filename <- paste0(outputname, ".png")
+        grDevices::png(file=filename,width=w,height=h)
+        
+        do.call("grid.arrange", c(p_all, ncol = colnum))
+        grDevices::dev.off()
+      }   
+      
     }else{
-
+      
       return(do.call("grid.arrange", c(p_all, ncol = colnum)))
-    
+      
     }
-
+    
+    
 
 
 
@@ -1078,21 +1090,33 @@ plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel
     p_all[[length(p_all)+1]] <- p
     
     if(is.null(outputname)==F){
-    filename <- paste0(outputname, ".pdf")
-    grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h)
-
-    do.call("grid.arrange", c(p_all, ncol = colnum))
-    grDevices::dev.off()
+      
+      if(print_pdf){
+            filename <- paste0(outputname, ".pdf")
+            grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h)
+        
+            do.call("grid.arrange", c(p_all, ncol = colnum))
+            grDevices::dev.off()
+      }
+      
+      if(print_png){
+            filename <- paste0(outputname, ".png")
+            grDevices::png(file=filename,width=w,height=h)
+        
+            do.call("grid.arrange", c(p_all, ncol = colnum))
+            grDevices::dev.off()
+      }   
+      
     }else{
-     
-      return(do.call("grid.arrange", c(p_all, ncol = colnum)))
-
+      
+          return(do.call("grid.arrange", c(p_all, ncol = colnum)))
+      
     }
+    
 
   }
 
 }
-
 
 
 #' Plot indel profile in a extended channel bar plot, original plots_type_4_m4_89 function
