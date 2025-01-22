@@ -31,17 +31,20 @@ Imports:
     Biostrings,
     signature.tools.lib,
     BSgenome.Hsapiens.UCSC.hg38,
-    BSgenome.Mmusculus.UCSC.mm10
+    BSgenome.Mmusculus.UCSC.mm10,
+    BSgenome.Hsapiens.1000genomes.hs37d5
 Suggests: 
     knitr,
     rmarkdown,
     testthat
 biocViews:
-    AnnotationData
-    BSgenome.Hsapiens.UCSC.hg38,
-    BSgenome.Mmusculus.UCSC.mm10
+    AnnotationData,
+
 VignetteBuilder: knitr
 LinkingTo: 
     Rcpp
 Remotes:
     github::Nik-Zainal-Group/signature.tools.lib
+    bioc::3.3/BSgenome.Hsapiens.UCSC.hg38,
+    bioc::3.3/BSgenome.Mmusculus.UCSC.mm10,
+    bioc::3.3/BSgenome.Hsapiens.1000genomes.hs37d5
