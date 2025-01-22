@@ -29,41 +29,55 @@ devtools::install_github("Nik-Zainal-Group/indelsig.tools.lib")
 
 ### Note for MacOS users:
 
-In case of problems installing the `NNLM` dependency library for `signature.tools.lib` regarding `gfortran` path, I suggest you the following Stackoverflow thread:
+If you encounter this problem while R is installing `NNLM`:
 
+```
+ld: warning: search path '/opt/gfortran/lib/gcc/aarch64-apple-darwin20.0/12.2.0' not found
+ld: warning: search path '/opt/gfortran/lib' not found
+ld: library 'gfortran' not found
+```
+You can simply install `gfortran` pkg file from the following Github page:
+
+```
+https://github.com/R-macos/gcc-12-branch/releases
+```
+
+*Source*:
 ```
 https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-installing-r-packages
 ```
 
-
-
 ## Main Functions
 
-### Data segmentation and filtering
+### Indel segmentation and filtering
 
 
--   indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 89-channels catalog
-    -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
+-   indel_classifier89(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 89-channel catalogues
+    -   indels: data.frame of indels having columns: "Sample", "chr", "position", "REF", "ALT"
     -   genome.v: either "hg19" or "hg38"
--   indel_classifierfull(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 476-channels catalog
-    -   indels: data.frame of indels having as columns "Sample", "chr", "position", "REF", "ALT"
+
+-   indel_classifierfull(indels, genome.v): Segments the indels provided by adding the necessary information to generate the 476-channel catalogues
+    -   indels: data.frame of indels having columns: "Sample", "chr", "position", "REF", "ALT"
     -   genome.v: either "hg19" or "hg38"
--   indel_highspecific(indel.classified): Filters highly repeated indels (\>= 10 repeats), indels with highly repeated nMer (\>=10) and indels longer than 100 bps
+
+-   indel_highspecific(indel.classified): Filters out indels in highly repeated regions (\>= 10 repeats) and indels longer than 100 bps
     -   indel.classified: the output of either `indel_classifier89` or `indel_classifierfull`
 
 
-### Generating catalogues
+### Generating indel catalogues
 
 -   gen_catalogue89(muts_list, sample_col):
     -   muts_list: either the output of `indel_classifier89` or `indel_highspecific`
     -   sample_col: name or index of the column storing the sample names
+
 -   gen_fullcatalogue(muts_list, sample_col):
     -   muts_list: either the output of `indel_classifierfull` or `indel_highspecific`
     -   sample_col: name or index of the column storing the sample names
 
 
 
-### Plotting
+### Plotting indel catalogues
+
 -   plots_indelprofile_89ch(muts_basis, colnum,h, w, text_size,print_Xlabel = T, outputname)
     -   muts_basis: catalogue data frame
     -   colnum: Number of columns in case multiple samples are plotted
@@ -72,8 +86,9 @@ https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-ins
     -   text_size: Text size of plot elements defining the channels
     -   print_Xlabel: if `TRUE` then the X axis labels are printed
     -   outputname: if `NUL`L the plot with be returned and printed, if it is a path then indelsig.tools.lib will print the plot to file.
-    -   print_png: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a png file
+    -   print_png: boolean, default = `TRUE`; if `TRUE` indelsig.tools.lib will save the plot to a png file
     -   print_pdf: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a pdf file
+
 -   plots_indelprofile_full(muts_basis, colnum,h, w, text_size,print_Xlabel = T, outputname)
     -   muts_basis: catalogue data frame
     -   colnum: Number of columns in case multiple samples are plotted
@@ -82,7 +97,7 @@ https://stackoverflow.com/questions/77836548/library-gfortran-not-found-when-ins
     -   text_size: Text size of plot elements defining the channels
     -   print_Xlabel: if `TRUE` then the X axis labels are printed
     -   outputname: if `NUL`L the plot with be returned and printed, if it is a path then indelsig.tools.lib will print the plot to file.
-    -   print_png: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a png file
+    -   print_png: boolean, default = `TRUE`; if `TRUE` indelsig.tools.lib will save the plot to a png file
     -   print_pdf: boolean, default = `FALSE`; if `TRUE` indelsig.tools.lib will save the plot to a pdf file
 
 ## Usage example
@@ -137,7 +152,7 @@ plots_indelprofile_89ch(mutations, colnum = 1, h = 3, w = 8,text_size = 3, outpu
 ![](example/example_plot.png)
 
 
-### Generating and plotting 476-channels catalogues
+### Generating and plotting 476-channel catalogues
 
 ```
 library(indelsig.tools.lib)
