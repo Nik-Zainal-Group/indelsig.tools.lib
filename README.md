@@ -29,7 +29,7 @@ devtools::install_github("Nik-Zainal-Group/indelsig.tools.lib")
 
 ```
 
-# Note for MacOS users:
+### Note for MacOS users:
 
 In case of problems installing the `NNLM` dependency library for `signature.tools.lib` regarding `gfortran` path, I suggest you the following Stackoverflow thread:
 
