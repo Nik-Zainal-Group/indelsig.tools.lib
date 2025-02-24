@@ -693,7 +693,7 @@ indel_type_4_figurelabel <- structure(list(IndelType = c("A[Ins(C):R0]A", "A[Ins
 #' @return A plot including 89-channel indel profile of multiple samples
 #' @import gridExtra
 #' @export
-plots_indelprofile_89ch<- function(muts_basis,colnum, h,w,text_size,print_Xlabel=T,, print_pdf = T, print_png=F, outputname){
+plots_indelprofile_89ch<- function(muts_basis,colnum, h,w,text_size,print_Xlabel=T, print_pdf = T, print_png=F, outputname){
 
   cnames <- names(muts_basis)
 #  cnames <- cnames[cnames !="IndelType"]
