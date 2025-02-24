@@ -46,16 +46,16 @@ fix_load_indels <- function(name){
 prepare_indels <- function(indels,sampleID,genome.v){
   ## Adapt the preparation functions by excising the mhcaller
   if(is.character(indels)==TRUE){
-    fix_prepare_indels('prepare.indel.df')
-    prepfunc <- fix_load_indels('vcfToIndelsClassification')
+    # fix_prepare_indels('prepare.indel.df')
+    # prepfunc <- fix_load_indels('vcfToIndelsClassification')
   }else if(is.data.frame(indels)==TRUE){
-    fix_prepare_indels('prepare.indel.df_tabversion')
-    prepfunc <- fix_load_indels('tabToIndelsClassification')
+    # fix_prepare_indels('prepare.indel.df_tabversion')
+    # prepfunc <- fix_load_indels('tabToIndelsClassification')
   }else{
     stop('Provide either a path to a vcf file or a tab file with chr, position, REF, ALT')
   }
   message("Indel-specific preps")
-  df <- prepfunc(indels,sampleID = sampleID,genome.v = genome.v)
+  df <- indelsig.tools.lib:::prepfunc(indels,sampleID = sampleID,genome.v = genome.v)
   factors <- sapply(df,is.factor)
   df[factors] <- lapply(df[factors],as.character)
   ## Filter out non-computable indels (non ATGCU,MT/M chr, or SNVs (REF/ALT) = 1bp)

@@ -1025,7 +1025,7 @@ gen_plot_catalougefull_single_noXlabel<- function(muts_basis,text_size,plot_titl
 #' @return A plot including extended channel indel profile of multiple samples
 #' @import gridExtra
 #' @export
-plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel=T,outputname){
+plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel=T, print_pdf = T, print_png = F, outputname){
 
   cnames <- names(muts_basis)
   #  cnames <- cnames[cnames !="IndelType"]
