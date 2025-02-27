@@ -478,7 +478,7 @@ gen_plot_catalouge89_single<- function(muts_basis,text_size,plot_title){
   p <- ggplot2::ggplot(data=muts_basis_melt, ggplot2::aes(x=IndelType, y=freq,fill=Indel))+ ggplot2::geom_bar(stat="identity",position="dodge", width=.7)+ggplot2::xlab("Indel Types")+ggplot2::ylab("Count")
   #  p <- p+scale_y_continuous(limits=c(0,40),breaks=(seq(0,40,10)))
   p <- p+ggplot2::scale_x_discrete(limits = indel_positions,labels = indel_positions_labels)+ ggplot2::ggtitle(plot_title)
-  p <- p+ggplot2::scale_fill_manual(values=indel_mypalette_fill_all)+ggplot2::coord_cartesian(ylim=c(0,unique(blocks3$ymax)), expand = FALSE)
+  p <- p+ggplot2::scale_fill_manual(values=indel_mypalette_fill_all)+ggplot2::scale_y_continuous(limits = c(0,unique(blocks3$ymax)), labels=scales::number_format(accuracy = 0.01), expand = c(0,0))
   p <- p+ggplot2::theme_classic()+ggplot2::theme(axis.text.x=ggplot2::element_text(angle=90, vjust=0.5, size=5,colour = "black",hjust=1),
                                                  axis.text.y=ggplot2::element_text(size=10,colour = "black"),
                                                  #    axis.line.y=element_blank(),
@@ -654,7 +654,7 @@ indel_type_4_figurelabel <- structure(list(IndelType = c("A[Ins(C):R0]A", "A[Ins
   p <- ggplot2::ggplot(data=muts_basis_melt, ggplot2::aes(x=IndelType, y=freq,fill=Indel))+ ggplot2::geom_bar(stat="identity",position="dodge", width=.7)+ggplot2::xlab("Indel Types")+ggplot2::ylab("Count")
   #  p <- p+scale_y_continuous(limits=c(0,40),breaks=(seq(0,40,10)))
   p <- p+ggplot2::scale_x_discrete(limits = indel_positions,labels = indel_positions_labels)+ ggplot2::ggtitle(plot_title)
-  p <- p+ggplot2::scale_fill_manual(values=indel_mypalette_fill_all)+ggplot2::coord_cartesian(ylim=c(unique(blocks$ymin),unique(blocks3$ymax)), expand = F)
+  p <- p+ggplot2::scale_fill_manual(values=indel_mypalette_fill_all) + ggplot2::scale_y_continuous(limits = c(unique(blocks$ymin),unique(blocks3$ymax)), labels=scales::number_format(accuracy = 0.01), expand = c(0,0))
   p <- p+ggplot2::theme_classic()+ggplot2::theme(axis.text.x=ggplot2::element_blank(),
                                                  axis.text.y=ggplot2::element_text(size=10,colour = "black"),
                                                  axis.ticks.x=ggplot2::element_blank(),
