@@ -64,8 +64,7 @@ prepfunc <- function (indel.data, sampleID, genome.v = "hg19")
   }
   vcf_seqnames <- unique(indel.data$chr)
   message("")
-  indel.data <- indel.data[indel.data$chr %in% expected_chroms,
-  ]
+  indel.data <- indel.data[indel.data$chr %in% expected_chroms,,drop=F]
   if (nrow(indel.data) == 0) {
     message("[warning tabToIndelsClassification] no indels founds, nothing to process.")
     return(NULL)
