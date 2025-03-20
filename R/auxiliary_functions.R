@@ -10,13 +10,13 @@ prepare.indel.df_tabversion <- function (indel.data, genomeSeq, genome.v)
     indel.type[ref.length > 1 & alt.length > 1] <- "DI"
     indel.type[ref.length == 1 & alt.length == 1] <- "DI"
     change <- vector()
-    if(sum(indel.type == "DI") > 1){
+    if(sum(indel.type == "DI") >= 1){
     	change[indel.type == "DI"] <- substr(as.character(indel.data$REF)[indel.type == "DI"], 2, 1e+05)
     }
-    if(sum(indel.type == "I") > 1){
+    if(sum(indel.type == "I") >= 1){
     		change[indel.type == "I"] <- substr(as.character(indel.data$ALT)[indel.type == "I"], 2, 1e+05)
     }
-    if(sum(indel.type == "D") > 1){
+    if(sum(indel.type == "D") >= 1){
     			change[indel.type == "D"] <- substr(as.character(indel.data$REF),2, 1e+05)[indel.type == "D"]
     }
     min.position <- indel.data$position
