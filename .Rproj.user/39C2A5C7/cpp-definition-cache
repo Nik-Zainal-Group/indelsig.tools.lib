@@ -45,5 +45,52 @@
             }
         ],
         "hidden": false
+    },
+    {
+        "file": "/home/vboxuser/mlibs/indelsig.tools.lib/src/code.cpp",
+        "file_last_write": 1739804986.0,
+        "definitions": [
+            {
+                "usr": "c:@F@compareSegmentations#$@N@std@S@vector>#I#$@N@std@S@allocator>#I#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "compareSegmentations(std::vector<int>, std::vector<int>)",
+                "file": "/home/vboxuser/mlibs/indelsig.tools.lib/src/code.cpp",
+                "line": 6,
+                "column": 6,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@ltrs#$@N@__gnu_cxx@S@__normal_iterator>#*C#$@N@std@N@__cxx11@S@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@S@allocator>#C#S0_#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ltrs(std::string::iterator, std::string::iterator, std::string::iterator, std::string::iterator)",
+                "file": "/home/vboxuser/mlibs/indelsig.tools.lib/src/code.cpp",
+                "line": 35,
+                "column": 5,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@segmentSingle#&$@N@std@N@__cxx11@S@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@S@allocator>#C#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "segmentSingle(std::string &, std::string &)",
+                "file": "/home/vboxuser/mlibs/indelsig.tools.lib/src/code.cpp",
+                "line": 59,
+                "column": 18,
+                "hidden": false
+            },
+            {
+                "usr": "c:@F@segment#$@N@std@S@vector>#$@N@std@N@__cxx11@S@basic_string>#C#$@N@std@S@char_traits>#C#$@N@std@S@allocator>#C#$@N@std@S@allocator>#S1_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "segment(std::vector<std::string>, std::vector<std::string>)",
+                "file": "/home/vboxuser/mlibs/indelsig.tools.lib/src/code.cpp",
+                "line": 81,
+                "column": 17,
+                "hidden": false
+            }
+        ],
+        "hidden": false
     }
 ]
