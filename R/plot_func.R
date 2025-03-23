@@ -690,10 +690,24 @@ indel_type_4_figurelabel <- structure(list(IndelType = c("A[Ins(C):R0]A", "A[Ins
 #' @param text_size Size of text
 #' @param print_Xlabel print X axis label or not
 #' @param outputname Output file name of the plot
+#' @param print_pdf Output pdf file
+#' @param print_png Output png file
 #' @return A plot including 89-channel indel profile of multiple samples
 #' @import gridExtra
 #' @export
-plots_indelprofile_89ch<- function(muts_basis,colnum, h,w,text_size,print_Xlabel=T, print_pdf = T, print_png=F, outputname){
+plots_indelprofile_89ch<- function(muts_basis,colnum,text_size=3,w=NULL, h=NULL,print_Xlabel = T, print_pdf = T, print_png=F, outputname){
+
+  if(is.null(w)){
+  
+    w = 8*colnum
+  
+  }
+
+  if(is.null(h)){
+
+    h = ceiling(names(muts_basis)/colnum)*3
+
+  }
 
   cnames <- names(muts_basis)
 #  cnames <- cnames[cnames !="IndelType"]
@@ -760,7 +774,7 @@ plots_indelprofile_89ch<- function(muts_basis,colnum, h,w,text_size,print_Xlabel
     
 	    if(print_pdf){
     		filename <- paste0(outputname, ".pdf")
-    		grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h)
+    		grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h, units="in")
 
     		do.call("grid.arrange", c(p_all, ncol = colnum))
     		grDevices::dev.off()
@@ -768,7 +782,7 @@ plots_indelprofile_89ch<- function(muts_basis,colnum, h,w,text_size,print_Xlabel
     	    
     	    if(print_png){
     		filename <- paste0(outputname, ".png")
-    		grDevices::png(file=filename,width=w,height=h)
+    		grDevices::png(file=filename,width=w,height=h, units = "in")
 
     		do.call("grid.arrange", c(p_all, ncol = colnum))
     		grDevices::dev.off()
