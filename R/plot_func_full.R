@@ -1020,12 +1020,27 @@ gen_plot_catalougefull_single_noXlabel<- function(muts_basis,text_size,plot_titl
 #' @param h Hight of the plot
 #' @param w Width of the plot
 #' @param text_size Size of text
-#' @param print_Xlabel print X axis label or not
+#' @param print_Xlabel Print X axis label or not
 #' @param outputname Output file name of the plot
+#' @param print_pdf Print plot to pdf file
+#' @param print_pbf Print plot to png file
 #' @return A plot including extended channel indel profile of multiple samples
 #' @import gridExtra
 #' @export
-plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel=T, print_pdf = T, print_png = F, outputname){
+plots_indelprofile_full<- function(muts_basis,colnum,text_size=3, h=NULL,w=NULL, print_Xlabel=T, print_pdf = T, print_png = F, outputname){
+
+  if(is.null(w)){
+  
+    w = 40*colnum
+  
+  }
+
+  if(is.null(h)){
+
+    h = ceiling(names(muts_basis)/colnum)*3
+
+  }
+
 
   cnames <- names(muts_basis)
   #  cnames <- cnames[cnames !="IndelType"]
@@ -1052,7 +1067,7 @@ plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel
       
       if(print_pdf){
         filename <- paste0(outputname, ".pdf")
-        grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h)
+        grDevices::pdf(file=filename, onefile=TRUE,width=w,height=h, units = "in" )
         
         do.call("grid.arrange", c(p_all, ncol = colnum))
         grDevices::dev.off()
@@ -1060,7 +1075,7 @@ plots_indelprofile_full<- function(muts_basis,colnum, h,w,text_size,print_Xlabel
       
       if(print_png){
         filename <- paste0(outputname, ".png")
-        grDevices::png(file=filename,width=w,height=h)
+        grDevices::png(file=filename,width=w,height=h, units="in" )
         
         do.call("grid.arrange", c(p_all, ncol = colnum))
         grDevices::dev.off()
