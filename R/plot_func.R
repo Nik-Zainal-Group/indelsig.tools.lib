@@ -705,7 +705,7 @@ plots_indelprofile_89ch<- function(muts_basis,colnum,text_size=3,w=NULL, h=NULL,
 
   if(is.null(h)){
 
-    h = ceiling(names(muts_basis)/colnum)*3
+    h = ceiling(length(names(muts_basis))/colnum)*3
 
   }
 

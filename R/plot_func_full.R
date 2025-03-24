@@ -1037,7 +1037,7 @@ plots_indelprofile_full<- function(muts_basis,colnum,text_size=3, h=NULL,w=NULL,
 
   if(is.null(h)){
 
-    h = ceiling(names(muts_basis)/colnum)*3
+    h = ceiling(length(names(muts_basis))/colnum)*3
 
   }
 
