@@ -69,9 +69,9 @@ prepfunc <- function (indel.data, sampleID, genome.v = "hg19")
     message("[warning tabToIndelsClassification] no indels founds, nothing to process.")
     return(NULL)
   }
-  indel.df <- indelsig.tools.lib:::prepare.indel.df_tabversion(indel.data, genomeSeq,
+  indel.df <- prepare.indel.df_tabversion(indel.data, genomeSeq,
                                           genome.v)
-  indels_classified <- signature.tools.lib:::mh(indel.df)
+  indels_classified <- mh(indel.df)
   indels_classified$indel.class <- "-"
   indels_classified$indel.class[indels_classified$classification ==
                                   "Microhomology-mediated"] <- "del.mhomology"
@@ -89,4 +89,8 @@ prepfunc <- function (indel.data, sampleID, genome.v = "hg19")
   return(cbind(indel.data[, !(colnames(indel.data) %in% colnames(indel.df)),
                           drop = F], indel.df))
 }
+
+
+
+
 

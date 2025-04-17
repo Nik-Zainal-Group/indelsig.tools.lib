@@ -32,7 +32,8 @@ Imports:
     signature.tools.lib,
     BSgenome.Hsapiens.UCSC.hg38,
     BSgenome.Mmusculus.UCSC.mm10,
-    BSgenome.Hsapiens.1000genomes.hs37d5
+    BSgenome.Hsapiens.1000genomes.hs37d5,
+    gmp
 Suggests: 
     knitr,
     rmarkdown,
@@ -43,4 +44,3 @@ VignetteBuilder: knitr
 LinkingTo: 
     Rcpp
 Remotes:
-    github::Nik-Zainal-Group/signature.tools.lib
