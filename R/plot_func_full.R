@@ -1811,10 +1811,7 @@ gen_plot_catalougefull_single_sd <- function (muts_basis, text_size=2, plot_titl
     )
     
     indel_mypalette_fill <- indel_mypalette_fill[specific_indel_type]
-    
-    print(blocks)
-    print(blocks3)
-    
+
     
   }else{
     blocks$labels <- c("1bp C", "1bp T", ">=2bp", "1bp C", "1bp T", 
