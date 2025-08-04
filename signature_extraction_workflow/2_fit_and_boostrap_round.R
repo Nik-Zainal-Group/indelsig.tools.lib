@@ -1,11 +1,14 @@
-library(indelsiglib)
+#library(indelsiglib)
 library(dplyr)
 library(tibble)
-
+library(ggplot2)
+library(grid)
+library(gridExtra)
+library(tidyverse)
 
 source("null_fit_estimation.R")
 source("fitting.R")
-
+source("plot_utils.R")
 
 
 ## the config is the id of the extraction

@@ -1,8 +1,11 @@
-library(indelsiglib)
+#library(indelsiglib)
 library(tidyverse)
 library(ggplot2)
+library(grid)
+library(gridExtra)
 library(mixtools)
 source("clustering.R")
+source("plot_utils.R")
 library(indelsig.tools.lib)
 
 
@@ -348,7 +351,7 @@ for (k in 5:n_max) {
       ggsave(filename = paste0(outdir_tissue,pgel_all[[tissue]]$name,'_',clustering$final_cut$method,'_k=',k,'_outliers_burden.png'),
              width=16,height = 6,plot = cl_plt_3)
 
-      cl_plt_4<- indelsiglib:::signature_barplots(mat =refined_means_mat,
+      cl_plt_4<- signature_barplots(mat =refined_means_mat,
                                                   err = refined_sd_mat,
                                                   text_size = 11,
                                                   nrow = ceiling(ncol(refined_means_mat)/5),

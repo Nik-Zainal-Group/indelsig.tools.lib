@@ -1,10 +1,15 @@
-library(indelsiglib)
+#library(indelsiglib)
 library(dplyr)
 library(tibble)
+library(ggplot2)
+library(NNLM)
+library(grid)
+library(gridExtra)
+
 
 source("fitting.R")
 source("cos_sim.R")
-
+source("plot_utils.R")
 
 tissue = tissue
 organ = tissue
@@ -153,7 +158,7 @@ for(k in rare_clustering$k_seq){
   colnames(rare_clustering$hc1_cuts_exp[[k_char]]$sd_profiles) <- paste0("Cluster ",1:k)
   
   
-  cl_plt1<- indelsiglib:::signature_barplots(mat =rare_clustering$hc1_cuts_exp[[k_char]]$mean_profiles ,
+  cl_plt1<- signature_barplots(mat =rare_clustering$hc1_cuts_exp[[k_char]]$mean_profiles ,
                                              err = rare_clustering$hc1_cuts_exp[[k_char]]$sd_profiles ,
                                              text_size = 11,
                                              nrow = ceiling(ncol(rare_clustering$hc1_cuts_exp[[k_char]]$mean_profiles)/5),
@@ -195,7 +200,7 @@ for(k in rare_clustering$k_seq){
     ## Plot the cluster residuals
     
     ## Plot the new signatures
-    p0 <- indelsiglib:::signature_barplots(mat = R[,colnames(subcluster_catalog),drop=F],
+    p0 <- signature_barplots(mat = R[,colnames(subcluster_catalog),drop=F],
                                            text_size = 12,
                                            ncol = ncol,
                                            nrow = nrow,
@@ -244,7 +249,7 @@ for(k in rare_clustering$k_seq){
       height = (nrow)*4.5
       
       ## Plot the new signatures
-      p1 <- indelsiglib:::signature_barplots(mat = new_results$new_signatures,
+      p1 <- signature_barplots(mat = new_results$new_signatures,
                                              text_size = 12,
                                              ncol = ncol,
                                              nrow = nrow,
