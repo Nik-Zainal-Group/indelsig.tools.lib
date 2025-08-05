@@ -77,7 +77,8 @@ has_first_step_run <- FALSE
 
 by_param <- 50
 
-###### FIRST STEP 
+# The following component computes the Excess of Variation test for each of the samples is a batch-wise manner
+# to avoid RAM saturation
 if(!plot_only){
   if(!has_first_step_run){
       
@@ -153,8 +154,6 @@ if(!plot_only){
   pvals <- as_tibble(do.call(rbind,lapply(pvals,function(x){as.data.frame(x$pvals)})))
   
   
-  #resccued_NA_pvals <- read.table(file = "extractions/Skin/fitting_pval/Skin_config3_nsig=9/rescued_NA_samples.tsv", sep = "\t", header = T)
-  
   
   save.image(paste0(outdir_pval,"bootstraps_v2.Rdata"))
   
@@ -191,9 +190,6 @@ save.image(paste0( outdir_pval, "bootstraps_v2.Rdata"))
 
 ######
 
-
-
-
 get_membership <- get_membership ## object fo the RDS file describing which samples are in which clusters
 
 get_included_clusters <- names(get_membership)[which( (names(get_membership) %in% get_excluded_clusters) == F )]
@@ -204,7 +200,6 @@ final_df <- left_join(final_df, y= reshape2::melt(get_membership[get_included_cl
 save.image(paste0( outdir_pval, "bootstraps_v2.Rdata"))
 readr::write_tsv(final_df,paste0(outdir_pval,tissue, "_config_", config,'_nsigs=',n_chosen,'_pvals.tsv'))
 
-
 colnames(final_df)[which(colnames(final_df) == "L1")] <- "cluster"
 
 final_df[is.na(final_df$cluster), "cluster"] <- "Exclude"
@@ -214,8 +209,6 @@ final_df$selected <- ifelse(final_df$samples %in% reshape2::melt(get_membership[
 final_df$cluster_factor <- factor(final_df$cluster,levels = c('Exclude',as.character(1:100),paste0(1:100,'_Hyp')))
 
 readr::write_tsv(final_df,paste0(outdir_pval,tissue, "_config_", config,'_nsigs=',n_chosen,'_pvals.tsv'))
-
-
 
 ## PLot
 f1 <- final_df %>%
