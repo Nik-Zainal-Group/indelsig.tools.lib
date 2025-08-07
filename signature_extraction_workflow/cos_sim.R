@@ -10,11 +10,17 @@ calculate_cosine_sim_all_v_one <- function(X,baseline){
   return(cos_sim)
 }
 
+
+cos_sim <- function (a, b)
+{
+    return(sum(a * b)/sqrt(sum(a^2) * sum(b^2)))
+}
+
 ## pairwise (all vs. all ) cosine similarity using fast cosine sim function
 calcuate_pairwise_cossim <- function(mat){ ## mat is col=samples, row = channels
   ## Calculate pairwise cosine similarity
   pairwise_cosine_sim <-  apply(expand.grid(1:ncol(mat),1:ncol(mat)),1,function(d){
-    indelsiglib::cos_sim(mat[,d[1],drop=T],mat[,d[2],drop=T])
+    cos_sim(mat[,d[1],drop=T],mat[,d[2],drop=T])
   })
   pairwise_cosine_sim <- matrix(pairwise_cosine_sim,ncol = ncol(mat),byrow = F)
   rownames(pairwise_cosine_sim) <- colnames(pairwise_cosine_sim) <- colnames(mat)
