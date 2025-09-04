@@ -742,7 +742,7 @@ plots_indelprofile_89ch<- function(muts_basis,colnum,text_size=3,w=NULL, h=NULL,
     
       if(print_png){
 	      filename <- paste0(outputname, ".png")
-	      grDevices::png(file=filename,width=w,height=h, units = "in", res = 300)
+	      grDevices::png(file=filename,width=w,height=h, units = "in", res = 72)
 
 	      do.call("grid.arrange", c(p_all, ncol = colnum))
 	      grDevices::dev.off()
@@ -782,7 +782,7 @@ plots_indelprofile_89ch<- function(muts_basis,colnum,text_size=3,w=NULL, h=NULL,
     	    
     	    if(print_png){
     		filename <- paste0(outputname, ".png")
-    		grDevices::png(file=filename,width=w,height=h, units = "in", res = 300)
+    		grDevices::png(file=filename,width=w,height=h, units = "in", res = 72)
 
     		do.call("grid.arrange", c(p_all, ncol = colnum))
     		grDevices::dev.off()

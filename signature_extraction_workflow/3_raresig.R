@@ -10,6 +10,7 @@ library(gridExtra)
 source("fitting.R")
 source("cos_sim.R")
 source("plot_utils.R")
+source("channel_sets.R")
 
 tissue = tissue
 organ = tissue

@@ -1,3 +1,5 @@
+source("channel_sets.R")
+
 palettes <- list()
 
 palettes$set1 <- c('#D55E00','#0072B2','#CC79A7','#E69F00','#56B4E9','#009E73','#c90c2e')
