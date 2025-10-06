@@ -1,4 +1,4 @@
-crete Package: indelsig.tools.lib
+Package: indelsig.tools.lib
 Type: Package
 Title: Indel signature tools R package
 Version: 0.1.0
