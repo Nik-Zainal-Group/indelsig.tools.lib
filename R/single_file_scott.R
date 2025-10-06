@@ -1,38 +1,38 @@
 Sys.setenv("PKG_CXXFLAGS"="-std=c++11")
 
-#' Fix prepare indels
-#'
-#' @param name TO BE ADDED
-#' @return function TO BE ADDED
-#' @export
-fix_prepare_indels <- function(name){
-  name <- 'prepare.indel.df_tabversion'
-  prepare_fixed <- get(name,asNamespace('signature.tools.lib'))
-  b <- as.character(body(prepare_fixed))
-  body(prepare_fixed)[2] <- parse(text=gsub('max.position \\+ 1','ifelse(indel.type=="I",min.position,max.position)\\+ 1',
-                                            gsub('(indel.length) ([-\\+]) 25','2*indel.length \\2 60',b[2])))
-  environment(prepare_fixed) <- asNamespace('signature.tools.lib')
-  assignInNamespace(name,prepare_fixed,ns='signature.tools.lib')
-  return(NULL)
-}
+# Fix prepare indels
+#
+# @param name TO BE ADDED
+# @return function TO BE ADDED
+# @export
+#fix_prepare_indels <- function(name){
+#  name <- 'prepare.indel.df_tabversion'
+#  prepare_fixed <- get(name,asNamespace('signature.tools.lib'))
+#  b <- as.character(body(prepare_fixed))
+#  body(prepare_fixed)[2] <- parse(text=gsub('max.position \\+ 1','ifelse(indel.type=="I",min.position,max.position)\\+ 1',
+#                                            gsub('(indel.length) ([-\\+]) 25','2*indel.length \\2 60',b[2])))
+#  environment(prepare_fixed) <- asNamespace('signature.tools.lib')
+#  assignInNamespace(name,prepare_fixed,ns='signature.tools.lib')
+#  return(NULL)
+#}
 
-#' Fix load indels
-#'
-#' @param name TO BE ADDED
-#' @return function TO BE ADDED
-#' @export
-fix_load_indels <- function(name){
-  prepfunc <- get(name,asNamespace('signature.tools.lib'))
-  b <- body(prepfunc)
-  final_line <- length(b)
-  body(prepfunc)[c(2,4,(final_line-2):(final_line))] <-
-    c(parse(text=gsub('paste0\\(c','paste0("chr",c',gsub('1000genomes\\.hs37d5','UCSC.hg19',as.character(b[2])))),
-      expression(message("")),
-      parse(text=gsub('*.+','message("")',as.character(b[(final_line-2):(final_line-1)]))),
-      expression(return(cbind(indel.data[,!(colnames(indel.data) %in% colnames(indel.df)),drop=F],indel.df))))
-
-  return(prepfunc)
-}
+# Fix load indels
+#
+# @param name TO BE ADDED
+# @return function TO BE ADDED
+# @export
+#fix_load_indels <- function(name){
+#  prepfunc <- get(name,asNamespace('signature.tools.lib'))
+#  b <- body(prepfunc)
+#  final_line <- length(b)
+#  body(prepfunc)[c(2,4,(final_line-2):(final_line))] <-
+#    c(parse(text=gsub('paste0\\(c','paste0("chr",c',gsub('1000genomes\\.hs37d5','UCSC.hg19',as.character(b[2])))),
+#      expression(message("")),
+#      parse(text=gsub('*.+','message("")',as.character(b[(final_line-2):(final_line-1)]))),
+#      expression(return(cbind(indel.data[,!(colnames(indel.data) %in% colnames(indel.df)),drop=F],indel.df))))
+#
+#  return(prepfunc)
+#}
 
 
 

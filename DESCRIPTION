@@ -1,4 +1,4 @@
-Package: indelsig.tools.lib
+crete Package: indelsig.tools.lib
 Type: Package
 Title: Indel signature tools R package
 Version: 0.1.0
@@ -30,10 +30,10 @@ Imports:
     Rcpp,
     Biostrings,
     BSgenome.Hsapiens.UCSC.hg38,
-    BSgenome.Mmusculus.UCSC.mm10,
-    BSgenome.Hsapiens.1000genomes.hs37d5,
+    BSgenome.Hsapiens.UCSC.hg19,
     gmp
 Suggests: 
+    BSgenome.Mmusculus.UCSC.mm10,
     knitr,
     rmarkdown,
     testthat
