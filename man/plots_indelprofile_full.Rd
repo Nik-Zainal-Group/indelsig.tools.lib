@@ -7,10 +7,12 @@
 plots_indelprofile_full(
   muts_basis,
   colnum,
-  h,
-  w,
-  text_size,
+  text_size = 3,
+  h = NULL,
+  w = NULL,
   print_Xlabel = T,
+  print_pdf = T,
+  print_png = F,
   outputname
 )
 }
@@ -19,15 +21,19 @@ plots_indelprofile_full(
 
 \item{colnum}{Number of columns}
 
+\item{text_size}{Size of text}
+
 \item{h}{Hight of the plot}
 
 \item{w}{Width of the plot}
 
-\item{text_size}{Size of text}
+\item{print_Xlabel}{Print X axis label or not}
 
-\item{print_Xlabel}{print X axis label or not}
+\item{print_pdf}{Print plot to pdf file}
 
 \item{outputname}{Output file name of the plot}
+
+\item{print_pbf}{Print plot to png file}
 }
 \value{
 A plot including extended channel indel profile of multiple samples
