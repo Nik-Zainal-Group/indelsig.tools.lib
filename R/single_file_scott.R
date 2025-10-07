@@ -92,7 +92,8 @@ segment_indels <- function(df){
     df <- df[,!(colnames(df) %in% c('unit','unit_length','internal_rep','internal_reps','spacer','spacer_length','prime3_rep','prime3_reps'))]
   }
   message("Running segmentation")
-  df <- cbind(df,get('segment',envir = .GlobalEnv)(df$change,df$slice3))
+  # df <- cbind(df,get('segment',envir = .GlobalEnv)(df$change,df$slice3))
+  df <- cbind(df,segment(df$change,df$slice3))
   ## Modified readout values:
   df$internal_coverage=df$unit_length*(df$internal_reps+1)
   ## define original reps
