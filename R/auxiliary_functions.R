@@ -63,7 +63,7 @@ prepfunc <- function (indel.data, sampleID, genome.v = "hg19")
     genomeSeq <- BSgenome.Cfamiliaris.UCSC.canFam3::BSgenome.Cfamiliaris.UCSC.canFam3
   }
   vcf_seqnames <- unique(indel.data$chr)
-  message("")
+  # message("")
   indel.data <- indel.data[indel.data$chr %in% expected_chroms,,drop=F]
   if (nrow(indel.data) == 0) {
     message("[warning tabToIndelsClassification] no indels founds, nothing to process.")
@@ -84,8 +84,8 @@ prepfunc <- function (indel.data, sampleID, genome.v = "hg19")
   indels_classified$indel.class[indels_classified$indel.type ==
                                   "DI"] <- "indel.complex"
   res <- list()
-  message("")
-  message("")
+  # message("")
+  # message("")
   return(cbind(indel.data[, !(colnames(indel.data) %in% colnames(indel.df)),
                           drop = F], indel.df))
 }

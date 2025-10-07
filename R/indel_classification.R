@@ -5,7 +5,9 @@
 #' @param genome.v : "hg19", "hg38"
 #' @return Classified indel list
 #' @export
-indel_classifier89 <- function(indels, genome.v){
+indel_classifier89 <- function(indels,
+                               genome.v,
+                               verbose=TRUE){
   #names(indels) <- c("Sample","chr", "position", "REF", "ALT")
   # indels$chr <- paste0("chr",indels$chr)
 
@@ -13,9 +15,9 @@ indel_classifier89 <- function(indels, genome.v){
   # indel[indel$chr=="24","chr"]="Y"
 
   ## prepare indels
-  prep_df <- prepare_indels(as.data.frame(indels),"pancan",genome.v)
+  prep_df <- prepare_indels(as.data.frame(indels),"pancan",genome.v,verbose=verbose)
   ## Segment indels
-  s <- segment_indels(prep_df) #get('segment_indels',envir = .GlobalEnv)(prep_df$change,prep_df$slice3)
+  s <- segment_indels(prep_df,verbose=verbose) #get('segment_indels',envir = .GlobalEnv)(prep_df$change,prep_df$slice3)
 
   s$mh_length <- s$indel.length-s$spacer_length
   s$prime3_rep_length <- nchar(s$prime3_rep)
